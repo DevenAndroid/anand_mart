@@ -72,7 +72,7 @@ class CommonTextFieldWidget extends StatelessWidget {
       decoration: InputDecoration(
           hintText: hint,
           focusColor: Colors.black,
-          hintStyle: GoogleFonts.poppins(
+          hintStyle: GoogleFonts.quicksand(
             color: Colors.white,
             fontSize: 14,
             // fontFamily: 'poppins',
@@ -120,7 +120,7 @@ class CommonButton extends StatelessWidget {
             // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           ),
           child: Text(title,
-              style: GoogleFonts.poppins(fontWeight: FontWeight.w700, color: AppTheme.primaryColor, fontSize: 20))),
+              style: GoogleFonts.quicksand(fontWeight: FontWeight.w700, color: AppTheme.primaryColor, fontSize: 20))),
     );
   }
 }

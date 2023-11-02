@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../routers/routers.dart';
 import '../../widget/apptheme.dart';
 import 'onboarding_list.dart';
 
@@ -42,7 +43,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       child: Stack(
         children: [
           PageView.builder(
-              itemCount: OnBoardingData.length + 1,
+              itemCount: OnBoardingData.length ,
               controller: controller,
               physics: loginLoaded ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
               pageSnapping: true,
@@ -147,7 +148,7 @@ class OnboardContent extends StatelessWidget {
                           onTap: (){
                             controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.ease);
                                     if (indexValue == 2) {
-                                      // Get.toNamed(MyRouters.loginScreen);
+                                  Get.toNamed(MyRouters.loginScreen);
                                     }
                           },
                           child: Text("Skip",
@@ -223,7 +224,7 @@ class OnboardContent extends StatelessWidget {
                 onTap: (){
                   controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.ease);
                             if (indexValue == 2) {
-                              // Get.toNamed(MyRouters.loginScreen);
+                               Get.toNamed(MyRouters.loginScreen);
                             }
                 },
                 child: SvgPicture.asset(AppAssets.arrow)),

@@ -25,8 +25,8 @@ class RegisterTextFieldWidget extends StatelessWidget {
   final bool? obscureText;
   final VoidCallback? onTap;
   final length;
-
-  const RegisterTextFieldWidget({
+  List<TextInputFormatter>? inputFormatters = [];
+   RegisterTextFieldWidget({
     Key? key,
     this.suffixIcon,
     this.prefixIcon,
@@ -39,6 +39,7 @@ class RegisterTextFieldWidget extends StatelessWidget {
     this.validator,
     this.suffix,
     this.autofillHints,
+    this.inputFormatters,
     this.prefix,
     this.minLines = 1,
     this.maxLines = 1,
@@ -58,6 +59,7 @@ class RegisterTextFieldWidget extends StatelessWidget {
       controller: controller,
       obscureText: hint == hint ? obscureText! : false,
       autofillHints: autofillHints,
+
       validator: validator,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
@@ -72,16 +74,16 @@ class RegisterTextFieldWidget extends StatelessWidget {
 
           hintText: hint,
           focusColor: const Color(0xFF384953),
-          hintStyle: GoogleFonts.poppins(
-            color: const Color(0xFF384953),
-            textStyle: GoogleFonts.poppins(
-              color: const Color(0xFF384953),
+          hintStyle: GoogleFonts.quicksand(
+            color: const Color(0xFF696969),
+            textStyle: GoogleFonts.quicksand(
+              color: const Color(0xFF696969),
               fontSize: 14,
-              fontWeight: FontWeight.w300,
+              fontWeight: FontWeight.w500,
             ),
             fontSize: 14,
             // fontFamily: 'poppins',
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w500,
           ),
           filled: true,
           fillColor: Colors.white.withOpacity(.10),
@@ -90,37 +92,37 @@ class RegisterTextFieldWidget extends StatelessWidget {
           // .copyWith(top: maxLines! > 4 ? AddSize.size18 : 0),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: const Color(0xFF384953).withOpacity(.24)),
-            borderRadius: BorderRadius.circular(6.0),
+            borderRadius: BorderRadius.circular(10.0),
           ),
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: const Color(0xFF384953).withOpacity(.24)),
-              borderRadius: const BorderRadius.all(Radius.circular(6.0))),
+              borderRadius: const BorderRadius.all(Radius.circular(10.0))),
           border: OutlineInputBorder(
               borderSide:
               BorderSide(color:const Color(0xFF384953).withOpacity(.24), width: 3.0),
-              borderRadius: BorderRadius.circular(6.0)),
+              borderRadius: BorderRadius.circular(10.0)),
           suffixIcon: suffix,
           prefixIcon: prefix),
     );
   }
 }
-class CommonButtonBlue extends StatelessWidget {
+class CommonButtonGreen extends StatelessWidget {
   final String title;
   final VoidCallback? onPressed;
 
-  const CommonButtonBlue({Key? key, required this.title, this.onPressed})
+  const CommonButtonGreen({Key? key, required this.title, this.onPressed})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6), color: AppTheme.primaryColor),
+          borderRadius: BorderRadius.circular(6), color: AppTheme.buttonColor),
       child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             minimumSize: Size(AddSize.screenWidth, AddSize.size50 * 1.2),
-            backgroundColor: AppTheme.primaryColor,
+            backgroundColor: AppTheme.buttonColor,
             elevation: 0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8), // <-- Radius
@@ -128,7 +130,7 @@ class CommonButtonBlue extends StatelessWidget {
             // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           ),
           child: Text(title,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.quicksand(
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
                   letterSpacing: .5,

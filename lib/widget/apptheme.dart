@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static const Color primaryColor = Color(0xff4DBA4D);
   static const Color secondaryColor = Color(0xff0074D9);
+  static const Color buttonColor = Color(0xff7ED957);
   static const Color onboardingColor = Color(0xff000000);
   static const Color onboardingDescColor = Color(0xFF616772);
   static const Color registortext = Color(0xFF909293);
